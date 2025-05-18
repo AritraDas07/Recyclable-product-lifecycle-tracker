@@ -80,3 +80,10 @@ The contract uses Aptos's Table data structure to efficiently store and retrieve
                         │ - Recycled Count │
                         └───────────────────┘
 ```
+
+### Best Practices
+
+- Always verify product existence before updating status
+- Use unique and meaningful product IDs
+- Monitor events for real-time tracking
+- Consider implementing additional verification checks for status transition
