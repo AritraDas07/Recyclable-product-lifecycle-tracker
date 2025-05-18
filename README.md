@@ -42,11 +42,17 @@ Before registering products, a manufacturer must initialize their product regist
 
 ```bash
 aptos move run --function-id 0x<YOUR_ADDRESS>::ProductTracker::initialize_registry
+```
 
 ### Registering Products
+```bash
 aptos move run --function-id 0x<YOUR_ADDRESS>::ProductTracker::register_product \
   --args string:"PROD123" string:"RecyclablePlastic"
+```
 
 ### Updating Product Status
+```bash
 aptos move run --function-id 0x<YOUR_ADDRESS>::ProductTracker::update_product_status \
   --args string:"PROD123" u64:3
+```
+
