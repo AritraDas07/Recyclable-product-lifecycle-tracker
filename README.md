@@ -64,3 +64,19 @@ aptos move run --function-id 0x<YOUR_ADDRESS>::ProductTracker::update_product_st
 
 ### Technical Architecture
 The contract uses Aptos's Table data structure to efficiently store and retrieve product information by ID. Event emission allows off-chain applications to track status changes in real-time.
+
+```bash
+┌─────────────────┐     ┌───────────────────┐     ┌─────────────────┐
+│  Manufacturer   │     │      Product      │     │ Status Updates  │
+│  (Account)      │◄────┤    Registry       │◄────┤ (Events)        │
+└─────────────────┘     └───────────────────┘     └─────────────────┘
+                               │
+                               ▼
+                        ┌───────────────────┐
+                        │ Product Entries   │
+                        │ - ID             │
+                        │ - Type           │
+                        │ - Status         │
+                        │ - Recycled Count │
+                        └───────────────────┘
+```
